@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".OrderSummary.Order_Summary"
+    android:scrollbars="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:theme="@style/toolbar_theme"
+        app:logo="@drawable/pab_logo_org1"/>
+
+    <View
+        android:id="@+id/view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="1.1dp"
+        android:background="@drawable/shadow"
+        android:layout_below="@id/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:layout_below="@id/view_toolbar"
+        android:background="#ffe4b2"
+        android:layout_marginBottom="1dp">
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:cardElevation="3dp">
+            <TextView
+                android:id="@+id/order_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Order Summary"
+                android:textColor="@color/dark_orange"
+                android:padding="9dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/edit_selector"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="2dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_edit_white_18dp"
+                    android:layout_marginStart="1dp"/>
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginStart="3dp"
+                    android:background="@android:color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="EDIT"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="4dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_above="@+id/place_your_order">
+        <LinearLayout
+            android:id="@+id/orders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="#fcfcfc"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/order_model"
+                android:layout_above="@id/view3"
+                android:layout_alignParentTop="true"
+                android:scrollbars="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+            <View
+                android:layout_above="@id/total_view"
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:layout_height="1dp"
+                android:background="#7f7f7f" />
+
+            <RelativeLayout
+                android:id="@+id/total_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="6dp"
+                android:padding="6dp">
+                <TextView
+                    android:id="@+id/subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subtotal : "
+                    android:textColor="#4c4c4c"
+                    android:padding="6dp"
+                    android:textSize="15sp"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:id="@+id/subtotal_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:textColor="@color/dark_orange"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_alignParentEnd="true"
+                    android:text="₹10000"/>
+                <TextView
+                    android:id="@+id/delivery_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Charge : "
+                    android:textColor="#4c4c4c"
+                    android:padding="6dp"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/subtotal"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:id="@+id/delivery_charge_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:textColor="@color/dark_orange"
+                    android:textStyle="bold"
+                    android:layout_below="@id/subtotal_rate"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="15sp"
+                    android:layout_alignStart="@id/subtotal_rate"
+                    android:text="₹100"/>
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total : "
+                    android:textColor="#4c4c4c"
+                    android:padding="6dp"
+                    android:textSize="15sp"
+                    android:layout_below="@+id/delivery_charge"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:id="@+id/total_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/dark_orange"
+                    android:textStyle="bold"
+                    android:padding="6dp"
+                    android:textSize="15sp"
+                    android:layout_below="@id/delivery_charge_rate"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignStart="@id/subtotal_rate"
+                    android:text="₹10100"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_above="@id/place_your_order"
+                android:layout_below="@id/scroll"
+                android:id="@+id/view_final"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_height="1dp"
+                android:background="#7f7f7f" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <TextView
+        android:id="@+id/place_your_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PLACE YOUR ORDER"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:layout_gravity="bottom|end"
+        android:gravity="center"
+        android:padding="15dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dark_orange"/>
+
+</RelativeLayout>

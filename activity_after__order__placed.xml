@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".After_Order_Placed.After_Order_Placed"
+    android:background="@android:color/white">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/order_placed"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="15dp" />
+
+        <LinearLayout
+            android:id="@+id/order_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/picture"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/order_placed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="ORDER CONFIRMED"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/light_black" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/successful"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/thank_you"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/order_layout"
+            android:text="Your order has been successfully placed."
+            android:layout_centerHorizontal="true"
+            android:textSize="15sp"
+            android:textColor="#1B1B1B"
+            />
+
+        <RelativeLayout
+            android:id="@+id/details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/thank_you">
+
+            <TextView
+                android:id="@+id/bill_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="BILL DETAILS"
+                android:textStyle="bold"
+                android:textColor="@color/light_black"
+                />
+
+            <TextView
+                android:id="@+id/order_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Number"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/darker_grey"
+                android:layout_below="@id/bill_details"/>
+
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LXY0576TYE12E"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@color/light_grey"
+                android:textColor="#1B1B1B"
+                android:layout_below="@id/order_number"/>
+
+            <View
+                android:id="@+id/view_number"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_below="@id/number"
+                android:background="#dddddd" />
+
+            <TextView
+                android:id="@+id/orders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Orders"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/darker_grey"
+                android:layout_below="@id/view_number"/>
+
+            <LinearLayout
+                android:id="@+id/ordered_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:baselineAligned="false"
+                android:layout_below="@id/orders"
+                android:background="@color/light_grey"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_weight="2"
+                        android:id="@+id/item"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:textColor="#4c4c4c"
+                        android:text="Item" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/Qty"
+                        android:layout_marginStart="32dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:textColor="#4c4c4c"
+                        android:gravity="center_horizontal"
+                        android:layout_marginEnd="5dp"
+                        android:text="Quantity" />
+
+                    <TextView
+                        android:layout_weight="2"
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="6dp"
+                        android:textColor="#4c4c4c"
+                        android:gravity="center_horizontal"
+                        android:text="Price" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/after_order_placed_model"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_below="@id/ordered_items"
+                android:background="#dddddd" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Payment"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/darker_grey"
+                android:layout_below="@id/view_recycler_view"/>
+
+            <RelativeLayout
+                android:id="@+id/total_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:padding="6dp"
+                android:background="@color/light_grey"
+                android:layout_below="@id/amount">
+                <TextView
+                    android:id="@+id/subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subtotal : "
+                    android:textColor="@color/light_black"
+                    android:padding="6dp"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:id="@+id/subtotal_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:textColor="@android:color/black"
+                    android:layout_alignParentEnd="true"
+                    android:text="₹10000"/>
+                <TextView
+                    android:id="@+id/delivery_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Charge : "
+                    android:textColor="@color/light_black"
+                    android:padding="6dp"
+                    android:layout_below="@+id/subtotal"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:id="@+id/delivery_charge_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:textColor="@android:color/black"
+                    android:layout_below="@id/subtotal_rate"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignStart="@id/subtotal_rate"
+                    android:text="₹100"/>
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total : "
+                    android:textColor="@color/light_black"
+                    android:padding="6dp"
+                    android:layout_below="@+id/delivery_charge"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:id="@+id/total_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:padding="6dp"
+                    android:layout_below="@id/delivery_charge_rate"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignStart="@id/subtotal_rate"
+                    android:text="₹10100"/>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_total"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_below="@id/total_view"
+                android:background="#dddddd" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/go_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GO TO HOME"
+            android:clickable="true"
+            android:onClick="go_home"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/details"
+            android:textColor="@android:color/white"
+            android:layout_gravity="bottom|end"
+            android:gravity="center"
+            android:padding="15dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/place_your_order_selector"
+            android:focusable="true" />
+    </RelativeLayout>
+</ScrollView>

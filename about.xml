@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fcfcfc">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:theme="@style/toolbar_theme"
+        app:title="About Us"
+        app:titleTextColor="@color/dark_orange"
+        />
+    <View
+        android:id="@+id/view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="1.1dp"
+        android:background="@drawable/shadow"
+        android:layout_below="@id/toolbar"/>
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/view_toolbar"
+        android:src="@drawable/pab_logo_org1" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        android:padding="5dp"
+        android:lineSpacingExtra="4dp"
+        android:layout_below="@+id/imgLogo"
+        android:layout_margin="5dp"
+        android:textColor="@color/light_black"/>
+</RelativeLayout>

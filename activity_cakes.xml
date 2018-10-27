@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cakes_activity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:theme="@style/toolbar_theme">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:textColor="@color/darker_grey"
+            android:hint="@string/search_your_favourites"
+            android:textSize="16sp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custom_edittext"
+            android:textColorHint="#78909C"
+            android:paddingBottom="10dp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/shadow"
+        android:layout_below="@id/toolbar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Cake Activity"
+        android:gravity="center"/>
+
+</RelativeLayout>
